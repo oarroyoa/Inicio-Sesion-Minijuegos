@@ -41,7 +41,5 @@
      * Incluye archivos de plantillas para la cabecera y el pie de la página.
      * Incluye la vista específica del controlador.
     */
-    require_once 'vistas/template/cabecera.html';
     require_once 'vistas/' . $controlador->vista . '.php';
-    require_once 'vistas/template/pie.html';
 ?>

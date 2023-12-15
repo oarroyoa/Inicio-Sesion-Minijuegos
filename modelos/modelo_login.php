@@ -22,8 +22,6 @@ class ModeloLogin extends Conexion {
         
         if ($stmt->num_rows > 0) {
             $stmt->fetch();
-            echo "Contraseña introducida: $contrasena<br>";
-echo "Contraseña almacenada: $hashContrasena<br>";
 
             // Verificar la contraseña hasheada
             if (password_verify($contrasena, $hashContrasena)) {
@@ -31,7 +29,10 @@ echo "Contraseña almacenada: $hashContrasena<br>";
                 $this->conexion->close();
 
                 // Iniciar sesión
-                session_start();
+                if (session_status() == PHP_SESSION_NONE) {
+                    session_start();
+                }
+
                 $_SESSION['idUsuario'] = $idUsuario;
                 $_SESSION['nombre'] = $nombre;
                 $_SESSION['perfil'] = $perfil;

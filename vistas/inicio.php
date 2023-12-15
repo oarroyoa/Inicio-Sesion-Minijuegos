@@ -1,4 +1,11 @@
-
+<?php
+session_start();
+?>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
     <title>Iniciar Sesión</title>
 </head>
 <body>
@@ -15,6 +22,6 @@
         </form>
     </div>
 
-
-    <p><a href="index.php?controlador=controlador_registro&accion=instalacion">Instalacion (si, esto no debería existir) </a>.</p>
-
+    <p><a href="index.php?controlador=controlador_registro&accion=instalacion">Instalacion (si, esto no debería existir)</a>.</p>
+</body>
+</html>

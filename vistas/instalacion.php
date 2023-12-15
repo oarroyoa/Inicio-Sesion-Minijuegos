@@ -1,4 +1,8 @@
-
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
     <title>Instalación</title>
 </head>
 <body>
@@ -7,7 +11,7 @@
         <form action="?controlador=controlador_registro&accion=register" method="post">
             <label for="correo">Correo electrónico: </label>
             <input type="email" name="correo" required><br>
-            
+
             <label for="contrasena">Contraseña: </label>
             <input type="password" name="contrasena" required><br>
 
@@ -20,3 +24,5 @@
         </form>
         <p>¿Ya tienes una cuenta? <a href="index.php">Inicia sesión</a>.</p>
     </div>
+</body>
+</html>

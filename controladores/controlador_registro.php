@@ -9,13 +9,15 @@ class controlador_registro {
         $this->modelo = new ModeloRegistro();
         $this->vista = null;
     }
-    public function registro(){
+
+    public function registro() {
         $this->vista = 'registro';
     }
-    
-    public function instalacion(){
+
+    public function instalacion() {
         $this->vista = 'instalacion';
     }
+
     public function register() {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $nombre = $_POST['nombre'];
@@ -26,9 +28,10 @@ class controlador_registro {
             $exito = $this->modelo->registrarUsuario($nombre, $correo, $contrasena, $perfil);
 
             if ($exito) {
-                echo "Registro exitoso. Ahora puedes iniciar sesión.";
-                // Puedes redirigir a la página de inicio de sesión u otra vista según tus necesidades
-            } else{
+                // Redirigir a la página de inicio de sesión u otra vista según tus necesidades
+                header('Location: index.php?controlador=controlador_login&accion=panel_administracion');
+                exit();
+            } else {
                 echo "Error en el registro. Puede que esté intentando agregar un superadministrador tras haber realizado la instalación";
             }
         }
